@@ -315,7 +315,7 @@
       function getHash(hash, call) {
         //$('#error').style('display', 'none')
         //$('#error').html('')
-        $.getJSON('http://127.0.0.1:8080/api/v0/dag/get/'+hash, function(block) {
+        $.getJSON('/api/v0/dag/get/'+hash, function(block) {
           call(block)
         }).fail(function() {
           //$('#error').style('display', 'block')
@@ -324,7 +324,7 @@
       }
 
       $body = $("body");
-
+      
       $(document).on({
           ajaxStart: function() { $body.addClass("loading");    },
            ajaxStop: function() { $body.removeClass("loading"); }
